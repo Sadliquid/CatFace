@@ -1,4 +1,6 @@
-# CatFace; cat faces that correlate to the bugs in your code
+# CatFace
+
+CatFace - cat faces that correlate to the bugs in your code
 
 ## Features
 
@@ -9,6 +11,10 @@ Cats' faces - well that's self explanatory
 ## Requirements
 
 No requirements
+
+## How to use
+
+Simply just install, and BOOM! It's in action! Click on the extension on your side panel to open the WebView, and so you can be monitored by cats.
 
 
 ## Release Notes
@@ -23,6 +29,6 @@ Stable production release
 ### 1.2.0
 Minor changes and updates
 
------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------
 
 * [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
