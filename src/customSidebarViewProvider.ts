@@ -96,7 +96,7 @@ export class CustomSidebarViewProvider implements vscode.WebviewViewProvider {
             <p></p>
             <h3>${message}</h3>
             <ul id="errorMessages">
-                ${errorMessages.map(message => `<li>${message}</li>`).join('')}
+                ${errorMessages.map(message => `<li id="individualErrors">${message}</li>`).join('')}
             </ul>
         </body>
 

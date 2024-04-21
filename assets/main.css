@@ -86,3 +86,8 @@ body {
 #errorMessages {
 	margin-top: 30px;
 }
+
+#individualErrors {
+	margin: 15px;
+	font-weight: bold;
+}
