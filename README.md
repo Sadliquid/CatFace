@@ -29,6 +29,9 @@ Stable production release
 ### 1.2.0
 Minor changes and updates
 
+### 2.0.0
+Improved usability
+
 --------------------------------------------------------------------------------------------
 
 * [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
