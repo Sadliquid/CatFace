@@ -15,7 +15,6 @@ function activate(context) {
         vscode.window.showInformationMessage('Command " Sidebar View [vscodeSidebar.openview] " called.');
     });
     context.subscriptions.push(openWebView);
-    // Update the webview when diagnostics change
     vscode.languages.onDidChangeDiagnostics(() => {
         provider.updateView();
     });

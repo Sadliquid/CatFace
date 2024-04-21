@@ -18,7 +18,6 @@ export class CustomSidebarViewProvider implements vscode.WebviewViewProvider {
     this._view = webviewView;
 
     webviewView.webview.options = {
-      // Allow scripts in the webview
       enableScripts: true,
       localResourceRoots: [this._extensionUri],
     };
@@ -36,8 +35,6 @@ export class CustomSidebarViewProvider implements vscode.WebviewViewProvider {
     const diagnostics = this.getDiagnostics();
     const numProblems = diagnostics.length;
 
-    // Get the local path to main script run in the webview,
-    // then convert it to a uri we can use in the webview.
     const scriptUri = webview.asWebviewUri(
         vscode.Uri.joinPath(this._extensionUri, "assets", "main.js")
     );
@@ -49,13 +46,10 @@ export class CustomSidebarViewProvider implements vscode.WebviewViewProvider {
         vscode.Uri.joinPath(this._extensionUri, "assets", "vscode.css")
     );
 
-    // Same for stylesheet
     const stylesheetUri = webview.asWebviewUri(
         vscode.Uri.joinPath(this._extensionUri, "assets", "main.css")
     );
 
-    // External image URL
-    // Define image URLs for different error counts
     let imageUrl = '';
     let message = "";
     if (numProblems === 0) {
@@ -75,7 +69,8 @@ export class CustomSidebarViewProvider implements vscode.WebviewViewProvider {
         message = "uhm hello friend, just letting you know, there's code in your bugs";
     }
 
-    // Use a nonce to only allow a specific script to be run.
+    const errorMessages = diagnostics.map(diagnostic => diagnostic.message);
+
     const nonce = getNonce();
 
     return `<!DOCTYPE html>
@@ -100,6 +95,9 @@ export class CustomSidebarViewProvider implements vscode.WebviewViewProvider {
             <h2>Errors: ${numProblems}</h2>
             <p></p>
             <h3>${message}</h3>
+            <ul id="errorMessages">
+                ${errorMessages.map(message => `<li>${message}</li>`).join('')}
+            </ul>
         </body>
 
         </html>`;

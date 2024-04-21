@@ -26,7 +26,6 @@ export function activate(context: vscode.ExtensionContext) {
 
     context.subscriptions.push(openWebView);
 
-    // Update the webview when diagnostics change
     vscode.languages.onDidChangeDiagnostics(() => {
         provider.updateView();
     });
