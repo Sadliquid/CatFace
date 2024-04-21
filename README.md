@@ -34,6 +34,9 @@ Minor changes and updates
 ### 2.0.1
 Improved usability
 
+### 2.1.1
+Further improved usability
+
 --------------------------------------------------------------------------------------------
 
 [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
