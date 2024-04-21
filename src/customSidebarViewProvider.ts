@@ -69,7 +69,10 @@ export class CustomSidebarViewProvider implements vscode.WebviewViewProvider {
         message = "uhm hello friend, just letting you know, there's code in your bugs";
     }
 
-    const errorMessages = diagnostics.map(diagnostic => diagnostic.message);
+    const errorMessages = diagnostics.map(diagnostic => {
+        const lineNumber = diagnostic.range.start.line + 1;
+        return `<li id="individualErrors">[Line ${lineNumber}]: ${diagnostic.message}</li>`;
+    });
 
     const nonce = getNonce();
 
@@ -96,7 +99,7 @@ export class CustomSidebarViewProvider implements vscode.WebviewViewProvider {
             <p></p>
             <h3>${message}</h3>
             <ul id="errorMessages">
-                ${errorMessages.map(message => `<li id="individualErrors">${message}</li>`).join('')}
+                ${errorMessages.join('')}
             </ul>
         </body>
 

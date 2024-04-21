@@ -48,7 +48,10 @@ class CustomSidebarViewProvider {
             imageUrl = webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, "assets", "10errors.png")).toString();
             message = "uhm hello friend, just letting you know, there's code in your bugs";
         }
-        const errorMessages = diagnostics.map(diagnostic => diagnostic.message);
+        const errorMessages = diagnostics.map(diagnostic => {
+            const lineNumber = diagnostic.range.start.line + 1;
+            return `<li id="individualErrors">[Line ${lineNumber}]: ${diagnostic.message}</li>`;
+        });
         const nonce = getNonce();
         return `<!DOCTYPE html>
         <html lang="en">
@@ -73,7 +76,7 @@ class CustomSidebarViewProvider {
             <p></p>
             <h3>${message}</h3>
             <ul id="errorMessages">
-                ${errorMessages.map(message => `<li id="individualErrors">${message}</li>`).join('')}
+                ${errorMessages.join('')}
             </ul>
         </body>
 
