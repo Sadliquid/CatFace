@@ -4,9 +4,11 @@ CatFace - cat faces that correlate to the bugs in your code
 
 ## Features
 
+Cats' faces - well that's self explanatory
+
 Error count - reflects the number of PROBLEMS in your code
 
-Cats' faces - well that's self explanatory
+Error messages - so you know what to debug!
 
 ## Requirements
 
@@ -29,9 +31,9 @@ Stable production release
 ### 1.2.0
 Minor changes and updates
 
-### 2.0.0
+### 2.0.1
 Improved usability
 
 --------------------------------------------------------------------------------------------
 
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
+[Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
