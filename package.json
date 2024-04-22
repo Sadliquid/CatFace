@@ -2,14 +2,14 @@
   "name": "catface",
   "displayName": "CatFace",
   "description": "Cats' faces that correlate to the bugs in your code!",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "publisher": "JoshuaLong",
   "icon": "assets/0errors.png",
-  "homepage": "https://github.com/Sadliquid/vscode-sidebar",
+  "homepage": "https://github.com/Sadliquid/CatFace",
   "license": "BSD-3-Clause",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Sadliquid/vscode-sidebar"
+    "url": "https://github.com/Sadliquid/CatFace"
   },
   "engines": {
     "vscode": "^1.61.0"

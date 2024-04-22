@@ -37,6 +37,9 @@ Improved usability
 ### 2.1.1
 Further improved usability
 
+### 2.1.2
+Updated extension details
+
 --------------------------------------------------------------------------------------------
 
 [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
