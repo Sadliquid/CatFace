@@ -40,6 +40,9 @@ Further improved usability
 ### 2.1.2
 Updated extension details
 
+## 2.1.3
+Migrated extension
+
 --------------------------------------------------------------------------------------------
 
 [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
