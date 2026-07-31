@@ -28,25 +28,46 @@ class CustomSidebarViewProvider {
         const stylesheetUri = webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, "assets", "main.css"));
         let imageUrl = '';
         let message = "";
-        if (numProblems === 0) {
-            imageUrl = webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, "assets", "0errors.png")).toString();
-            message = "you make the cat very happy!";
-        }
-        else if (numProblems >= 1 && numProblems < 3) {
-            imageUrl = webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, "assets", "3errors.png")).toString();
-            message = "(uh oh)";
-        }
-        else if (numProblems >= 3 && numProblems < 6) {
-            imageUrl = webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, "assets", "6errors.png")).toString();
-            message = "eughh what's that...";
-        }
-        else if (numProblems >= 6 && numProblems < 10) {
-            imageUrl = webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, "assets", "10errors.png")).toString();
-            message = "dude look at what you've done-";
-        }
-        else {
-            imageUrl = webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, "assets", "10errors.png")).toString();
-            message = "uhm hello friend, just letting you know, there's code in your bugs";
+        switch (true) {
+            case numProblems === 0:
+                imageUrl = webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, "assets", "0errors.png")).toString();
+                message = "purrr-fect the cat is PLEASE,You make the cat very happy!";
+                break;
+            case numProblems >= 1 && numProblems < 3:
+                imageUrl = webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, "assets", "3errors.png")).toString();
+                message = "meow... already? we just started. smh my paw my paw ";
+                break;
+            case numProblems >= 3 && numProblems < 6:
+                imageUrl = webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, "assets", "40errors.png")).toString();
+                message = "oh so ur just winging it huh. bold strategy ngl mrow.";
+                break;
+            case numProblems >= 6 && numProblems < 10:
+                imageUrl = webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, "assets", "10errors.png")).toString();
+                message = "MEHHHH??? did u even test this or just close ur eyes and pray";
+                break;
+            case numProblems >= 10 && numProblems < 15:
+                imageUrl = webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, "assets", "15errors.png")).toString();
+                message = "10 errors. TEN. the cat is not okay. I am not okay. nobody is okay.";
+                break;
+            case numProblems >= 15 && numProblems < 25:
+                imageUrl = webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, "assets", "20errors.png")).toString();
+                message = "bro cooked and left the stove on MROW WHAT IS THIS.";
+                break;
+            case numProblems >= 25 && numProblems < 35:
+                imageUrl = webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, "assets", "25errors.png")).toString();
+                message = "MEOOOOHHH ur compiler called. it said it quit. it said goodbye.";
+                break;
+            case numProblems >= 35 && numProblems < 50:
+                imageUrl = webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, "assets", "30errors.png")).toString();
+                message = "at this point just delete the repo and become a farmer MRRROW.";
+                break;
+            case numProblems >= 50:
+                imageUrl = webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, "assets", "35errors.png")).toString();
+                message = "50+ errors??? FIFTY??? the cat has ascended. i am beyond disappointment. ur on ur own.";
+                break;
+            default:
+                imageUrl = webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, "assets", "0errors.png")).toString();
+                message = "purrr-fect the cat is PLEASED, you make the cat very happy!";
         }
         const errorMessages = diagnostics.map(diagnostic => {
             const lineNumber = diagnostic.range.start.line + 1;
@@ -83,7 +104,6 @@ class CustomSidebarViewProvider {
         </html>`;
     }
     getDiagnostics() {
-        // Get all diagnostics for the active text editor
         const editor = vscode.window.activeTextEditor;
         if (editor) {
             const document = editor.document;
@@ -105,4 +125,3 @@ function getNonce() {
     }
     return text;
 }
-//# sourceMappingURL=customSidebarViewProvider.js.map
